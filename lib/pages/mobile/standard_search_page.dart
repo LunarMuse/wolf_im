@@ -1,0 +1,90 @@
+import 'package:flutter/material.dart';
+
+import 'standard_search_bar.dart';
+
+// SearchPage 可以复用 WidgetsBloc，进行局部的 Bloc
+// 不必单独提供 SearchBloc 增加复杂性
+class StandardSearchPageProvider extends StatelessWidget {
+  const StandardSearchPageProvider({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    // return BlocProvider(
+    //   lazy: false,
+    //   create: (BuildContext context) => WidgetsBloc(
+    //     repository: BlocProvider.of<WidgetsBloc>(context).repository,
+    //   ),
+    //   child: const StandardSearchPage(),
+    // );
+    return StandardSearchPage();
+  }
+}
+
+class StandardSearchPage extends StatelessWidget {
+  const StandardSearchPage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    bool isDark = Theme.of(context).brightness == Brightness.dark;
+
+    return Scaffold(
+      body: Column(
+        children: [
+          SizedBox(
+            height: MediaQuery.of(context).padding.top,
+            width: MediaQuery.of(context).size.width,
+            child: ColoredBox(
+              color: isDark
+                  ? Theme.of(context).appBarTheme.backgroundColor ??
+                        Colors.black
+                  : Colors.white,
+            ),
+          ),
+          const StandardSearchBarInner(),
+          // Expanded(
+          //   child: BlocBuilder<WidgetsBloc, WidgetsState>(
+          //     builder: _buildBodyByState,
+          //   ),
+          // ),
+        ],
+      ),
+    );
+  }
+
+  // Widget _buildBodyByState(BuildContext context, WidgetsState state) {
+  //   Widget noSearchArg = NotSearchPage(tips: context.l10n.searchSomething);
+  //   if (state.filter.name.isEmpty) {
+  //     return noSearchArg;
+  //   }
+  //
+  //   if (state is WidgetsLoaded) {
+  //     if (state.widgets.isEmpty) {
+  //       return EmptyShower(message: context.l10n.emptySearch);
+  //     }
+  //     return ListView.builder(
+  //       padding: EdgeInsets.zero,
+  //       itemBuilder: (_, index) => MobileWidgetTiled(
+  //         searchArg: state.filter.name,
+  //         model: state.widgets[index],
+  //         onTap: () => _toDetail(context, state.widgets[index]),
+  //       ),
+  //       itemCount: state.widgets.length,
+  //     );
+  //   }
+  //
+  //   if (state is WidgetsLoading) {
+  //     return const LoadingShower();
+  //   }
+  //
+  //   if (state is WidgetsLoadFailed) {
+  //     return const ErrorPage();
+  //   }
+  //
+  //   return noSearchArg;
+  // }
+
+  // void _toDetail(BuildContext context, WidgetModel model) {
+  //   // BlocProvider.of<WidgetDetailBloc>(context).add(FetchWidgetDetail(model));
+  //   context.push('/widget/detail/${model.name}', extra: model);
+  // }
+}

@@ -1,0 +1,124 @@
+name: wolf_im
+description: "OpenIM is not just another chat application; it's an innovative open-source instant messaging solution specifically designed for developers. Unlike standalone applications like Telegram, Signal, and Rocket.Chat that provide complete user interfaces and backend services for general users, OpenIM offers a powerful backend and SDK tailored for seamless integration into your own applications."
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+# The following defines the version and build number for your application.
+# A version number is three numbers separated by dots, like 1.2.43
+# followed by an optional build number separated by a +.
+# Both the version and the builder number may be overridden in flutter
+# build by specifying --build-name and --build-number, respectively.
+# In Android, build-name is used as versionName while build-number used as versionCode.
+# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
+# In iOS, build-name is used as CFBundleShortVersionString while build-number is used as CFBundleVersion.
+# Read more about iOS versioning at
+# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+# In Windows, build-name is used as the major, minor, and patch parts
+# of the product and file versions while build-number is used as the build suffix.
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.8.1
+
+workspace:
+  - modules/flutter_openim_sdk_ffi
+  - modules/toly_ui
+  - modules/fx
+
+# Dependencies specify other packages that your package needs in order to work.
+# To automatically upgrade your package dependencies to the latest versions
+# consider running `flutter pub upgrade --major-versions`. Alternatively,
+# dependencies can be manually updated by changing the version numbers below to
+# the latest version available on pub.dev. To see which dependencies have newer
+# versions available, run `flutter pub outdated`.
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^1.0.8
+
+  # 数据与持久化
+  dio: ^5.4.3+1 # 网络请求
+  shared_preferences: ^2.5.3 # xml 固化
+  jwt_decoder: ^2.0.1 # jwt 解析
+  path_provider: ^2.1.5  # 路径
+
+  flutter_quill: ^11.0.0-dev.21
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # The "flutter_lints" package below contains a set of recommended lints to
+  # encourage good coding practices. The lint set provided by the package is
+  # activated in the `analysis_options.yaml` file located at the root of your
+  # package. See that file for information about deactivating specific lint
+  # rules and activating additional ones.
+  flutter_lints: ^5.0.0
+  intl: 0.20.2
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter packages.
+flutter:
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+  generate: true
+
+  assets:
+    - assets/images/
+    - assets/data/
+    #    - assets/data/web/
+    - assets/images/head_icon/
+    - assets/images/widgets/
+    - assets/flutter.db
+    - assets/version.json
+
+  fonts: # 配置字体，可配置多个，支持ttf和otf,ttc等字体资源
+    - family: TolyIcon
+      fonts:
+        - asset: assets/iconfont/toly_icon.ttf
+    - family: IndieFlower #字体名
+      fonts:
+        - asset: assets/fonts/IndieFlower-Regular.ttf
+    - family: BalooBhai2 #字体名
+      fonts:
+        - asset: assets/fonts/BalooBhai2-Regular.ttf
+    - family: Inconsolata #字体名
+      fonts:
+        - asset: assets/fonts/Inconsolata-Regular.ttf
+    - family: Neucha #字体名
+      fonts:
+        - asset: assets/fonts/Neucha-Regular.ttf
+    - family: ComicNeue #字体名
+      fonts:
+        - asset: assets/fonts/ComicNeue-Regular.ttf
+    - family: CHOPS
+      fonts:
+        - asset: assets/fonts/CHOPS.ttf
+    - family: fangzhengkaiti
+      fonts:
+        - asset: assets/fonts/fangzhengkaiti.ttf
+    - family: xiahangkai
+      fonts:
+        - asset: assets/fonts/xiahangkai.ttf
+    - family: WorkSans
+      fonts:
+        - asset: assets/fonts/WorkSans-Regular.ttf
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/Roboto-Regular.ttf
+
+toly:
+  icon:
+    src_zip: ''
+    assets_dir: 'assets/iconfont'
+    file_dist: 'packages/app/lib/app/res/toly_icon.dart'

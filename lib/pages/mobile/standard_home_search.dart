@@ -1,0 +1,92 @@
+import 'package:flutter/material.dart';
+import 'package:wolf_im/config/toly_icon.dart';
+import 'package:wolf_im/l10n/ext.dart';
+import 'package:wolf_im/widgets/feedback_widget.dart';
+
+class StandardHomeSearch extends StatelessWidget
+    implements PreferredSizeWidget {
+  const StandardHomeSearch({Key? key}) : super(key: key);
+
+  @override
+  Size get preferredSize => const Size.fromHeight(35 + 8 * 2);
+
+  @override
+  Widget build(BuildContext context) {
+    bool isDark = Theme.of(context).brightness == Brightness.dark;
+
+    return ColoredBox(
+      color: isDark ? Colors.black : Colors.white,
+      child: Row(
+        children: [
+          _buildHead(context),
+          Expanded(
+            child: GestureDetector(
+              onTap: () => _toSearchPage(context),
+              child: Container(
+                margin: const EdgeInsets.symmetric(vertical: 8),
+                height: 35,
+                child: TextField(
+                  autofocus: false,
+                  enabled: false,
+                  cursorColor: Colors.blue,
+                  maxLines: 1,
+                  decoration: _topSearchInputDecoration(isDark, context),
+                ),
+              ),
+            ),
+          ),
+          _buildCollectIcon(context),
+        ],
+      ),
+    );
+  }
+
+  InputDecoration _topSearchInputDecoration(bool isDark, BuildContext context) {
+    String hintText = context.l10n.searchWidget;
+    return InputDecoration(
+      filled: true,
+      fillColor: isDark ? const Color(0xff292929) : const Color(0xffF3F6F9),
+      prefixIcon: const Icon(Icons.search, color: Colors.grey, size: 20),
+      prefixIconConstraints: const BoxConstraints(maxHeight: 24, minWidth: 36),
+      isCollapsed: true,
+      contentPadding: const EdgeInsets.only(top: 4, bottom: 4, right: 8),
+      border: const UnderlineInputBorder(
+        borderSide: BorderSide.none,
+        borderRadius: BorderRadius.all(Radius.circular(6)),
+      ),
+      hintText: hintText,
+      hintStyle: const TextStyle(fontSize: 14),
+    );
+  }
+
+  Widget _buildHead(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 12.0),
+      child: FeedbackWidget(
+        onPressed: () => _openDrawer(context),
+        child: const CircleAvatar(
+          radius: 16,
+          backgroundImage: AssetImage('assets/images/icon_head.webp'),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildCollectIcon(BuildContext context) {
+    return IconButton(
+      // onPressed: () => context.push(AppRoute.collection.url),
+      onPressed: () {},
+      icon: const Icon(TolyIcon.icon_collect, size: 22),
+    );
+  }
+
+  void _toSearchPage(BuildContext context) {
+    // Navigator.of(
+    //   context,
+    // ).push(FadePageRoute(child: const StandardSearchPageProvider()));
+  }
+
+  void _openDrawer(BuildContext context) {
+    Scaffold.of(context).openDrawer();
+  }
+}

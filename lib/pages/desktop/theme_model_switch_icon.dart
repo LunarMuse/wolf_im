@@ -1,0 +1,30 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:tolyui/tolyui.dart';
+import 'package:wolf_im/bloc/app_config_bloc.dart';
+import 'package:wolf_im/config/toly_icon.dart';
+
+class ThemeModelSwitchIcon extends StatelessWidget {
+  const ThemeModelSwitchIcon({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    bool isDark = Theme.of(context).brightness == Brightness.dark;
+    return MouseRegion(
+      cursor: SystemMouseCursors.click,
+      child: TolyAction(
+        style: const ActionStyle.dark(),
+        onTap: () {
+          context.read<AppConfigBloc>().changeThemeMode(
+            isDark ? ThemeMode.light : ThemeMode.dark,
+          );
+        },
+        child: Icon(
+          !isDark ? TolyIcon.dark : TolyIcon.wb_sunny,
+          color: Colors.white,
+          size: 22,
+        ),
+      ),
+    );
+  }
+}
