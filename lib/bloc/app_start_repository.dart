@@ -6,6 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:fx_boot_starter/fx_boot_starter.dart';
 import 'package:fx_platform_adapter/fx_platform_adapter.dart';
 import 'package:path/path.dart' as path;
+import 'package:wolf_im/bloc/openim_listener.dart';
 import 'package:wolf_im/config/app_config.dart';
 
 class FlutterUnitStartRepo implements AppStartRepository<AppConfig> {
@@ -25,14 +26,10 @@ class FlutterUnitStartRepo implements AppStartRepository<AppConfig> {
     );
 
     debugPrint("FlutterUnitStartRepo init app");
-    // await SpStorage().initSp();
-    // await initAppMeta();
-    //
-    // registerHttpClient();
-    // NoteEnv().attachBridge(UnitNoteBridge());
-    // if (!kAppEnv.isWeb) await initDb();
-    // HttpUtil.instance.rebase(PathUnit.baseUrl);
-    // AppConfigPo po = await SpStorage().appConfig.read();
+
+    ImController controller = ImController();
+    controller.onInit();
+
     return AppConfig();
   }
 
