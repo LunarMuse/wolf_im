@@ -9,7 +9,14 @@ GoRoute get chatRoute => GoRoute(
   builder: (_, __) {
     if (kAppEnv.isDesktopUI) {
       // return const DeskWidgetPanel(header: NewsHeader());
-      return Center(child: Text("chatRoute"));
+      // PreferredDragToMoveWrapper窗口按钮：首选 拖动 移动 最大化/最小化 关闭等
+      return PreferredDragToMoveWrapper(
+        child: AppBar(
+          title: const Text("chatRoute", style: TextStyle(fontFamily: '宋体')),
+          actions: const [WindowButtons()],
+        ),
+      );
+      // Center(child: Text("chatRoute"));
     }
     return const UnitPhoneNavigation();
   },

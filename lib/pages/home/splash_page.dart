@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fx_boot_starter/fx_boot_starter.dart';
 import 'package:fx_platform_adapter/fx_platform_adapter.dart';
+import 'package:wolf_im/config/app/app_const_field.dart';
 import 'package:wolf_im/config/app_config.dart';
 import 'package:wolf_im/config/global_value.dart';
-import 'package:wolf_im/config/str_unit.dart';
 import 'package:wolf_im/widgets/flutter_unit_text.dart';
 import 'package:wolf_im/widgets/unit_text_style.dart';
 
@@ -58,7 +58,7 @@ class _SplashBody extends StatelessWidget {
             children: [
               const Stack(children: [ColorfulText(), FlutterLogo(size: 60)]),
               const SizedBox(height: 20),
-              FlutterUnitText(text: StrUnit.appName, color: color),
+              FlutterUnitText(text: AppConstField.appName, color: color),
             ],
           ),
         ),

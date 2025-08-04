@@ -1,4 +1,5 @@
 library l10n;
-export 'ext.dart';
-export 'enum/language.dart';
 
+export 'enum/language.dart';
+export 'ext.dart';
+export 'locale_provider.dart';

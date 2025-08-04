@@ -1,13 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:wolf_im/l10n/l10n.dart';
 
-/// create by 张风捷特烈 on 2020/11/29
-/// contact me by email 1981462002@qq.com
-/// 说明:
-
-class StrUnit {
+class AppConstField {
   // 小文字大小
-  static const String version = 'V3.2.0';
+  static const String version = 'V1.0.0';
   static const String appName = 'Wolf IM';
 
   static String galleryDesc(BuildContext context) =>
