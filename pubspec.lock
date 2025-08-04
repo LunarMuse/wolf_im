@@ -17,14 +17,6 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "7.7.1"
-  app_boot_starter:
-    dependency: transitive
-    description:
-      name: app_boot_starter
-      sha256: ea88ee3821a0a935d045c99e9315cd51a61aeaf0a5d92c01a2920b9224db14c5
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "1.0.1"
   args:
     dependency: transitive
     description:
@@ -153,14 +145,6 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "3.1.1"
-  dev_build:
-    dependency: transitive
-    description:
-      name: dev_build
-      sha256: fda8a54458b2a873a84e0cd1513f4323a1fb0599ed5455245359bc0398bad9ee
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "1.1.2+11"
   diff_match_patch:
     dependency: transitive
     description:
@@ -186,7 +170,7 @@ packages:
     source: hosted
     version: "2.1.1"
   equatable:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: equatable
       sha256: "567c64b3cb4cf82397aac55f4f0cbd3ca20d77c6c03bedbc4ceaddc08904aef7"
@@ -266,9 +250,9 @@ packages:
     source: hosted
     version: "1.30.1"
   flame_ext:
-    dependency: transitive
+    dependency: "direct main"
     description:
-      path: "modules/fx/modules/flame_ext"
+      path: "modules/fx/flame_ext"
       relative: true
     source: path
     version: "0.0.1"
@@ -301,14 +285,6 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.1.0"
-  flutter_highlight:
-    dependency: transitive
-    description:
-      name: flutter_highlight
-      sha256: "7b96333867aa07e122e245c033b8ad622e4e3a42a1a2372cbb098a2541d8782c"
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "0.7.0"
   flutter_keyboard_visibility_linux:
     dependency: transitive
     description:
@@ -397,60 +373,44 @@ packages:
     source: sdk
     version: "0.0.0"
   fx_boot_starter:
-    dependency: transitive
+    dependency: "direct main"
     description:
-      path: "modules/fx/modules/fx_boot_starter"
+      path: "modules/fx/fx_boot_starter"
       relative: true
     source: path
     version: "0.1.1"
-  fx_dao:
-    dependency: transitive
-    description:
-      path: "modules/fx/modules/fx_dao"
-      relative: true
-    source: path
-    version: "0.0.3+4"
-  fx_dio:
-    dependency: transitive
-    description:
-      path: "modules/fx/modules/fx_dio"
-      relative: true
-    source: path
-    version: "0.0.4+4"
   fx_env:
-    dependency: transitive
+    dependency: "direct main"
     description:
-      name: fx_env
-      sha256: c95836ab108c498d53f43c464e08a5ce64975efdf586fb46f1a4c37bb2c400bf
-      url: "https://pub.flutter-io.cn"
-    source: hosted
+      path: "modules/fx/fx_env"
+      relative: true
+    source: path
     version: "0.0.1"
   fx_go_router_ext:
-    dependency: transitive
+    dependency: "direct main"
     description:
-      path: "modules/fx/modules/fx_go_router_ext"
+      path: "modules/fx/fx_go_router_ext"
       relative: true
     source: path
     version: "0.0.6+1"
   fx_platform_adapter:
-    dependency: transitive
+    dependency: "direct main"
     description:
-      path: "modules/fx/modules/fx_platform_adapter"
+      path: "modules/fx/fx_platform_adapter"
       relative: true
     source: path
     version: "0.0.3"
   fx_string:
-    dependency: transitive
+    dependency: "direct main"
     description:
-      name: fx_string
-      sha256: "3350be2fa11cdb0d4107e4657431d05088a88795ef3145ad37902f6066a5b124"
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "0.0.1"
+      path: "modules/fx/fx_string"
+      relative: true
+    source: path
+    version: "0.0.3+1"
   fx_trace:
-    dependency: transitive
+    dependency: "direct main"
     description:
-      path: "modules/fx/modules/fx_trace"
+      path: "modules/fx/fx_trace"
       relative: true
     source: path
     version: "0.0.5+6"
@@ -470,14 +430,6 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "14.8.0"
-  highlight:
-    dependency: transitive
-    description:
-      name: highlight
-      sha256: "5353a83ffe3e3eca7df0abfb72dcf3fa66cc56b953728e7113ad4ad88497cf21"
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "0.7.0"
   html:
     dependency: transitive
     description:
@@ -494,6 +446,14 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.4.0"
+  http_client_helper:
+    dependency: transitive
+    description:
+      name: http_client_helper
+      sha256: "8a9127650734da86b5c73760de2b404494c968a3fd55602045ffec789dac3cb1"
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "3.0.0"
   http_parser:
     dependency: transitive
     description:
@@ -510,6 +470,14 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "0.20.2"
+  js:
+    dependency: transitive
+    description:
+      name: js
+      sha256: "53385261521cc4a0c4658fd0ad07a7d14591cf8fc33abbceae306ddb974888dc"
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.7.2"
   json_annotation:
     dependency: transitive
     description:
@@ -606,14 +574,6 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.0.0"
-  oktoast:
-    dependency: transitive
-    description:
-      name: oktoast
-      sha256: f1366c5c793ddfb8f55bc6fc3e45db43c45debf173b765fb4c5ec096cbdeb84a
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "3.4.0"
   ordered_set:
     dependency: transitive
     description:
@@ -630,22 +590,6 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.2.0"
-  package_info_plus:
-    dependency: transitive
-    description:
-      name: package_info_plus
-      sha256: "7976bfe4c583170d6cdc7077e3237560b364149fcd268b5f53d95a991963b191"
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "8.3.0"
-  package_info_plus_platform_interface:
-    dependency: transitive
-    description:
-      name: package_info_plus_platform_interface
-      sha256: "6c935fb612dff8e3cc9632c2b301720c77450a126114126ffaafe28d2e87956c"
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "3.2.0"
   path:
     dependency: transitive
     description:
@@ -734,22 +678,6 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.1.8"
-  pool:
-    dependency: transitive
-    description:
-      name: pool
-      sha256: "20fe868b6314b322ea036ba325e6fc0711a22948856475e2c2b6306e8ab39c2a"
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "1.5.1"
-  process_run:
-    dependency: transitive
-    description:
-      name: process_run
-      sha256: "6ec839cdd3e6de4685318e7686cd4abb523c3d3a55af0e8d32a12ae19bc66622"
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "1.2.4"
   provider:
     dependency: transitive
     description:
@@ -955,70 +883,6 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "7.0.0"
-  sqflite:
-    dependency: transitive
-    description:
-      name: sqflite
-      sha256: e2297b1da52f127bc7a3da11439985d9b536f75070f3325e62ada69a5c585d03
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "2.4.2"
-  sqflite_android:
-    dependency: transitive
-    description:
-      name: sqflite_android
-      sha256: "2b3070c5fa881839f8b402ee4a39c1b4d561704d4ebbbcfb808a119bc2a1701b"
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "2.4.1"
-  sqflite_common:
-    dependency: transitive
-    description:
-      name: sqflite_common
-      sha256: "6ef422a4525ecc601db6c0a2233ff448c731307906e92cabc9ba292afaae16a6"
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "2.5.6"
-  sqflite_common_ffi:
-    dependency: transitive
-    description:
-      name: sqflite_common_ffi
-      sha256: "9faa2fedc5385ef238ce772589f7718c24cdddd27419b609bb9c6f703ea27988"
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "2.3.6"
-  sqflite_common_ffi_web:
-    dependency: transitive
-    description:
-      name: sqflite_common_ffi_web
-      sha256: "61ea702e7aba727f28be7ead00b84c19c745cd4a4934d0c41473303df11ac9ea"
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "0.4.5+4"
-  sqflite_darwin:
-    dependency: transitive
-    description:
-      name: sqflite_darwin
-      sha256: "279832e5cde3fe99e8571879498c9211f3ca6391b0d818df4e17d9fff5c6ccb3"
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "2.4.2"
-  sqflite_platform_interface:
-    dependency: transitive
-    description:
-      name: sqflite_platform_interface
-      sha256: "8dd4515c7bdcae0a785b0062859336de775e8c65db81ae33dd5445f35be61920"
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "2.4.0"
-  sqlite3:
-    dependency: transitive
-    description:
-      name: sqlite3
-      sha256: dd806fff004a0aeb01e208b858dbc649bc72104670d425a81a6dd17698535f6e
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "2.8.0"
   stack_trace:
     dependency: transitive
     description:
@@ -1051,14 +915,6 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.4.1"
-  synchronized:
-    dependency: transitive
-    description:
-      name: synchronized
-      sha256: c254ade258ec8282947a0acbbc90b9575b4f19673533ee46f2f6e9b3aeefd7c0
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "3.4.0"
   term_glyph:
     dependency: transitive
     description:
@@ -1075,89 +931,83 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "0.7.4"
-  toggle_rotate:
-    dependency: transitive
-    description:
-      name: toggle_rotate
-      sha256: "601eba9b41ea8cb2d8765f5b8cb59ef9a8b2f36c592389e846b3aba20d2fc3f2"
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "1.0.1"
-  toly_menu:
-    dependency: transitive
-    description:
-      name: toly_menu
-      sha256: dce49e04dc4ed40168c7af6f4830c8a92e9760e2cb8392cc454d031e24aee055
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "0.0.5"
-  toly_menu_manager:
-    dependency: transitive
-    description:
-      name: toly_menu_manager
-      sha256: "7c178eec5b9c03947897fea88b26c4148c5dfd8c5c286b6e3cc281e49e4cbe3c"
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "0.0.2"
   tolyui:
-    dependency: "direct overridden"
+    dependency: "direct main"
     description:
-      path: "modules/toly_ui/modules/tolyui"
+      path: "modules/toly_ui/tolyui"
       relative: true
     source: path
     version: "0.0.4+10"
   tolyui_color:
-    dependency: "direct overridden"
+    dependency: "direct main"
     description:
-      path: "modules/toly_ui/modules/tolyui_color"
+      path: "modules/toly_ui/tolyui_color"
       relative: true
     source: path
     version: "0.0.2"
   tolyui_feedback:
-    dependency: "direct overridden"
+    dependency: "direct main"
     description:
-      path: "modules/toly_ui/modules/tolyui_feedback"
+      path: "modules/toly_ui/tolyui_feedback"
       relative: true
     source: path
     version: "0.3.6+6"
-  tolyui_message:
-    dependency: "direct overridden"
+  tolyui_image:
+    dependency: "direct main"
     description:
-      path: "modules/toly_ui/modules/tolyui_message"
+      path: "modules/toly_ui/tolyui_image"
+      relative: true
+    source: path
+    version: "0.0.1"
+  tolyui_message:
+    dependency: "direct main"
+    description:
+      path: "modules/toly_ui/tolyui_message"
       relative: true
     source: path
     version: "0.2.6+1"
   tolyui_meta:
-    dependency: transitive
+    dependency: "direct main"
     description:
-      name: tolyui_meta
-      sha256: "449bca06271d6c5d2a6b49192fd9176fa14b86fcd57c7317c4466a9d0b334674"
-      url: "https://pub.flutter-io.cn"
-    source: hosted
+      path: "modules/toly_ui/tolyui_meta"
+      relative: true
+    source: path
     version: "0.0.2+1"
   tolyui_navigation:
-    dependency: "direct overridden"
+    dependency: "direct main"
     description:
-      path: "modules/toly_ui/modules/tolyui_navigation"
+      path: "modules/toly_ui/tolyui_navigation"
       relative: true
     source: path
     version: "0.2.0+5"
-  tolyui_rx_layout:
-    dependency: transitive
+  tolyui_refresh:
+    dependency: "direct main"
     description:
-      name: tolyui_rx_layout
-      sha256: "559198f0bc1d2b3d2beb75be54ae17b8d9fc4276d7ff099967e8007450ce0719"
-      url: "https://pub.flutter-io.cn"
-    source: hosted
+      path: "modules/toly_ui/tolyui_refresh"
+      relative: true
+    source: path
+    version: "0.0.1+1"
+  tolyui_rich_input:
+    dependency: "direct main"
+    description:
+      path: "modules/toly_ui/tolyui_rich_input"
+      relative: true
+    source: path
     version: "1.0.0"
-  two_dimensional_scrollables:
-    dependency: transitive
+  tolyui_rx_layout:
+    dependency: "direct main"
     description:
-      name: two_dimensional_scrollables
-      sha256: "0f77ecb96596f2f82eec2b0a8e60d9305c58315557da9fa3b610c7dbf5ded621"
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "0.3.7"
+      path: "modules/toly_ui/tolyui_rx_layout"
+      relative: true
+    source: path
+    version: "1.0.0"
+  tolyui_skeleton:
+    dependency: "direct main"
+    description:
+      path: "modules/toly_ui/tolyui_skeleton"
+      relative: true
+    source: path
+    version: "0.0.1"
   typed_data:
     dependency: transitive
     description:
@@ -1311,9 +1161,9 @@ packages:
     source: hosted
     version: "0.4.3"
   wrapper:
-    dependency: transitive
+    dependency: "direct main"
     description:
-      path: "modules/toly_ui/modules/wrapper"
+      path: "modules/toly_ui/wrapper"
       relative: true
     source: path
     version: "1.0.2"

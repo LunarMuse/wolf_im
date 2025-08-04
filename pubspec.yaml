@@ -23,8 +23,7 @@ environment:
 
 workspace:
   - modules/flutter_openim_sdk_ffi
-  - modules/toly_ui
-  - modules/fx
+#  - modules/toly_ui
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -42,6 +41,9 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
 
+  # 便于结构比较
+  equatable: ^2.0.7
+
   # 数据与持久化
   dio: ^5.4.3+1 # 网络请求
   shared_preferences: ^2.5.3 # xml 固化
@@ -49,6 +51,48 @@ dependencies:
   path_provider: ^2.1.5  # 路径
 
   flutter_quill: ^11.0.0-dev.21
+
+  # fx
+  fx_boot_starter:
+    path: modules/fx/fx_boot_starter
+  fx_go_router_ext:
+    path: modules/fx/fx_go_router_ext
+  fx_platform_adapter:
+    path: modules/fx/fx_platform_adapter
+  fx_trace:
+    path: modules/fx/fx_trace
+  flame_ext:
+    path: modules/fx/flame_ext
+  fx_env:
+    path: modules/fx/fx_env
+  fx_string:
+    path: modules/fx/fx_string
+
+  # tolyui
+  tolyui:
+    path: modules/toly_ui/tolyui
+  tolyui_navigation:
+    path: modules/toly_ui/tolyui_navigation
+  tolyui_meta:
+    path: modules/toly_ui/tolyui_meta
+  tolyui_feedback:
+    path: modules/toly_ui/tolyui_feedback
+  tolyui_color:
+    path: modules/toly_ui/tolyui_color
+  tolyui_image:
+    path: modules/toly_ui/tolyui_image
+  tolyui_message:
+    path: modules/toly_ui/tolyui_message
+  tolyui_refresh:
+    path: modules/toly_ui/tolyui_refresh
+  tolyui_rich_input:
+    path: modules/toly_ui/tolyui_rich_input
+  tolyui_rx_layout:
+    path: modules/toly_ui/tolyui_rx_layout
+  tolyui_skeleton:
+    path: modules/toly_ui/tolyui_skeleton
+  wrapper:
+    path: modules/toly_ui/wrapper
 
 dev_dependencies:
   flutter_test:
