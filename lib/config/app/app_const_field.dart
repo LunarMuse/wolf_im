@@ -6,6 +6,12 @@ class AppConstField {
   static const String version = 'V1.0.0';
   static const String appName = 'Wolf IM';
 
+  static const String appSplashLeading = 'Wolf IM Splash';
+  static const String appSplashLogo = 'assets/images/icon_head.webp';
+  static const String appSplashBottomText1 = '这是启动页Power By wolf';
+  static const String appSplashBottomText2 = '· 2025 ·  @liangjingjing ';
+  static const String appSplashColorfulText = 'M';
+
   static String galleryDesc(BuildContext context) =>
       """
 [

@@ -3,23 +3,23 @@ import 'dart:math';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-class FlutterUnitText extends StatefulWidget {
+class FlutterUnitTextWidget extends StatefulWidget {
   final String text;
   final Color color;
   final double fontSize;
 
-  const FlutterUnitText({
+  const FlutterUnitTextWidget({
     this.text = "Toly",
     this.color = Colors.blue,
     this.fontSize = 32,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   State createState() => _FlutterUnitTextState();
 }
 
-class _FlutterUnitTextState extends State<FlutterUnitText>
+class _FlutterUnitTextState extends State<FlutterUnitTextWidget>
     with SingleTickerProviderStateMixin {
   late AnimationController _ctrl;
 
@@ -54,7 +54,7 @@ class _FlutterUnitTextState extends State<FlutterUnitText>
   }
 
   @override
-  void didUpdateWidget(FlutterUnitText oldWidget) {
+  void didUpdateWidget(FlutterUnitTextWidget oldWidget) {
     super.didUpdateWidget(oldWidget);
     _ctrl.forward();
   }

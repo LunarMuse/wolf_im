@@ -9,6 +9,16 @@ import 'package:wolf_im/config/app_config.dart';
 import 'package:wolf_im/routes/app_route.dart';
 import 'package:wolf_im/wolf_im.dart';
 
+// WolfIMApplication具体应用的启动逻辑实现类，通过混入 FxStarter 复用通用骨架，同时填充业务细节。
+// 明确泛型为 AppConfig（启动过程中处理的配置数据类型）；
+// 实现 FxStarter 的抽象成员：
+//    app：返回应用的根 Widget（AppBlocProvider 包裹 WolfIM，即注册 Bloc 后的实际应用组件）；
+//    repository：返回启动初始化仓库 AppStartRepo（负责执行初始化任务，如配置窗口、性能优化）；
+// 实现 AppStartAction 的生命周期回调：
+//    onLoaded：初始化完成后，用加载的 AppConfig 初始化 AppConfigBloc（将配置数据注入状态管理）；
+//    onStartSuccess：启动成功后，导航到应用主界面（AppRoute.chat.url）；
+//    onStartError：启动失败后，导航到错误页面（AppRoute.startError.url）；
+//    onGlobalError：捕获应用运行中的全局异常并打印日志。
 class WolfIMApplication with FxStarter<AppConfig> {
   const WolfIMApplication();
 

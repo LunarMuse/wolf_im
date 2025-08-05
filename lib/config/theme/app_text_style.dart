@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-import '../config/theme/size_unit.dart';
-import '../config/unit_color.dart';
+import '../unit_color.dart';
+import 'size_unit.dart';
 
 ///文本样式
-class UnitTextStyle {
+class AppTextStyle {
   // 标题加黑
   static const labelBold = TextStyle(fontWeight: FontWeight.bold, fontSize: 16);
 
