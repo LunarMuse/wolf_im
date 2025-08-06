@@ -7,6 +7,8 @@ import 'package:fx_boot_starter/fx_boot_starter.dart';
 import 'package:fx_platform_adapter/fx_platform_adapter.dart';
 import 'package:path/path.dart' as path;
 import 'package:wolf_im/config/app_config.dart';
+import 'package:wolf_im/config/app_config_po.dart';
+import 'package:wolf_im/config/sp_storage.dart';
 
 // 1. AppStartRepo 类是一个应用启动初始化仓库（Repository），主要负责在应用启动阶段执行必要的初始化任务，并提供初始的应用配置信息。
 //  它遵循了 “仓储模式（Repository Pattern）”，将应用启动的初始化逻辑封装起来，便于管理和复用。
@@ -37,15 +39,15 @@ class AppStartRepo implements AppStartRepository<AppConfig> {
       size: const Size(1180, 680),
     );
 
-    debugPrint("AppStartRepo init app");
-
-    // ImController controller = ImController();
-    // controller.onInit();
+    await SpStorage().initSp();
 
     // 作用：返回一个初始的 AppConfig 实例。
     // 说明：AppConfig 是存储应用基础配置的模型类（如默认主题、语言、是否首次启动等），
     //  这里返回的实例可能包含默认配置，后续可结合本地存储（如 SharedPreferences）加载持久化的用户配置。
-    return AppConfig();
+    // return AppConfig();
+    AppConfigPo po = await SpStorage().appConfig.read();
+    AppConfig state = AppConfig.fromPo(po);
+    return state;
   }
 
   Future<void> initDb() async {

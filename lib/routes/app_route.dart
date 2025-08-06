@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fx_platform_adapter/fx_platform_adapter.dart';
 import 'package:go_router/go_router.dart';
-import 'package:wolf_im/pages/desktop/flutter_unit_desk_navigation.dart';
+import 'package:wolf_im/pages/desktop/app_desk_navigation_page.dart';
 import 'package:wolf_im/routes/chat_route.dart';
 import 'package:wolf_im/routes/global_route.dart';
 
@@ -73,10 +73,11 @@ RouteBase get appRoute {
       ...globalRoutes,
       if (kAppEnv.isDesktopUI)
         // ShellRoute：GoRouter 中的 “外壳路由”，作用是定义一个固定的父布局（外壳），所有子路由的内容会作为 child 嵌入到这个外壳中。
-        // AppDeskNavigation(content: child)：桌面端的导航外壳组件，通常包含固定的导航元素（如左侧侧边栏菜单、顶部标题栏、底部状态栏等），
+        // AppDeskNavigationPage(content: child)：桌面端的导航外壳组件，通常包含固定的导航元素（如左侧侧边栏菜单、顶部标题栏、底部状态栏等），
         //  child 是当前激活的子路由页面（即 body 中的某个页面），会显示在外壳的 “内容区域”。
         ShellRoute(
-          builder: (_, __, Widget child) => AppDeskNavigation(content: child),
+          builder: (_, __, Widget child) =>
+              AppDeskNavigationPage(content: child),
           routes: body,
         ),
       if (!kAppEnv.isDesktopUI) ...body,

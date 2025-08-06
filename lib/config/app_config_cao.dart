@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'AppConfigPo.dart';
+import 'app_config_po.dart';
 
 const String kAppSpKey = 'app-config';
 

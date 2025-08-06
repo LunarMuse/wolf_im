@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
-import 'package:wolf_im/config/AppConfigPo.dart';
+import 'package:wolf_im/config/app_config_po.dart';
 import 'package:wolf_im/config/cons.dart';
 import 'package:wolf_im/config/highlighter_style.dart';
 import 'package:wolf_im/l10n/l10n.dart';

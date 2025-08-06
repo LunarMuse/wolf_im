@@ -41,6 +41,6 @@ class AppStartBloc<S> extends Cubit<AppStatus> {
       emit(AppLoadDone(cost, data));
       await Future.delayed(const Duration(milliseconds: 50));
     }
-    emit( AppStartSuccess(data));
+    emit(AppStartSuccess(data));
   }
 }
