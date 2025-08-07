@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:wolf_im/config/color_utils.dart';
-import 'package:wolf_im/config/unit_color.dart';
+import 'package:wolf_im/config/theme/unit_color.dart';
+import 'package:wolf_im/utils/color_utils.dart';
 import 'package:wolf_im/widgets/color_chooser.dart';
 import 'package:wolf_im/widgets/edit_panel.dart';
 import 'package:wolf_im/widgets/input_button.dart';
@@ -31,18 +31,21 @@ class CategoryModel {
   });
 } // TODO:
 
-class EditCategoryPanel extends StatefulWidget {
+class EditCategoryPanelWidget extends StatefulWidget {
   final CategoryModel? model;
   final EditType type;
 
-  const EditCategoryPanel({Key? key, this.model, this.type = EditType.add})
-    : super(key: key);
+  const EditCategoryPanelWidget({
+    Key? key,
+    this.model,
+    this.type = EditType.add,
+  }) : super(key: key);
 
   @override
   _EditCategoryPanelState createState() => _EditCategoryPanelState();
 }
 
-class _EditCategoryPanelState extends State<EditCategoryPanel> {
+class _EditCategoryPanelState extends State<EditCategoryPanelWidget> {
   String name = '';
   String color = '';
   String info = '';

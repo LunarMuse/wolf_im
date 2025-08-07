@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class CircleImage extends StatelessWidget {
-  const CircleImage({
+class CircleImageWidget extends StatelessWidget {
+  const CircleImageWidget({
     Key? key,
     this.borderSize = 3,
     required this.image,

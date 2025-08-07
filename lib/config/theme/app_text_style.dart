@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../unit_color.dart';
 import 'size_unit.dart';
+import 'unit_color.dart';
 
 ///文本样式
 class AppTextStyle {

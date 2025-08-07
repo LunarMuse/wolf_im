@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fx_go_router_ext/fx_go_router_ext.dart';
 import 'package:fx_platform_adapter/fx_platform_adapter.dart';
-import 'package:wolf_im/config/app_config.dart';
-import 'package:wolf_im/config/global_value.dart';
+import 'package:wolf_im/config/app/app_config.dart';
+import 'package:wolf_im/config/app/global_value.dart';
 
 ThemeData darkTheme(AppConfig state) {
   const Color scaffoldBackgroundColor = Color(0xff010201);

@@ -1,8 +1,8 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
-import 'package:wolf_im/config/app_config_po.dart';
+import 'package:wolf_im/config/app/app_config_po.dart';
 import 'package:wolf_im/config/cons.dart';
-import 'package:wolf_im/config/highlighter_style.dart';
+import 'package:wolf_im/config/theme/highlighter_style.dart';
 import 'package:wolf_im/l10n/l10n.dart';
 
 /// create by 张风捷特烈 on 2020-04-11

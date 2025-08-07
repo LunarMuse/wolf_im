@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:wolf_im/config/highlighter_style.dart';
-import 'package:wolf_im/config/widget_filter.dart';
+import 'package:wolf_im/config/theme/highlighter_style.dart';
 import 'package:wolf_im/l10n/l10n.dart';
+import 'package:wolf_im/utils/widget_filter.dart';
 
 class Cons {
   static const List<Color> tabColors = [

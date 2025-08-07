@@ -3,18 +3,18 @@
 /// 说明:
 import 'package:flutter/material.dart';
 
-import 'high_light_code.dart';
-import 'highlighter_style.dart';
-import 'language/dart_languge.dart';
+import '../config/language/dart_languge.dart';
+import '../config/theme/high_light_code.dart';
+import '../config/theme/highlighter_style.dart';
 
 class CodeWidget extends StatelessWidget {
-  CodeWidget(
-      {Key? key,
-      required this.code,
-      required this.style,
-      this.fontSize = 13,
-      this.fontFamily})
-      : super(key: key);
+  CodeWidget({
+    Key? key,
+    required this.code,
+    required this.style,
+    this.fontSize = 13,
+    this.fontFamily,
+  }) : super(key: key);
 
   final String code;
   final HighlighterStyle style;
@@ -31,8 +31,10 @@ class CodeWidget extends StatelessWidget {
         TextSpan(
           style: TextStyle(fontSize: fontSize, fontFamily: fontFamily),
           children: <TextSpan>[
-            CodeHighlighter(style: style, language: const DartLanguage())
-                .format(code)
+            CodeHighlighter(
+              style: style,
+              language: const DartLanguage(),
+            ).format(code),
           ],
         ),
       );
@@ -45,8 +47,9 @@ class CodeWidget extends StatelessWidget {
         alignment: Alignment.centerLeft,
         padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
-            color: style.backgroundColor ?? const Color(0xffF6F8FA),
-            borderRadius: const BorderRadius.all(Radius.circular(5.0))),
+          color: style.backgroundColor ?? const Color(0xffF6F8FA),
+          borderRadius: const BorderRadius.all(Radius.circular(5.0)),
+        ),
         child: codeWidget,
       ),
     );

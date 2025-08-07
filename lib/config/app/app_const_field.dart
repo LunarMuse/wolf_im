@@ -12,6 +12,11 @@ class AppConstField {
   static const String appSplashBottomText2 = '· 2025 ·  @liangjingjing ';
   static const String appSplashColorfulText = 'M';
 
+  static const double appMenuBarLeadingCircleImageSize = 60;
+  static const String appMenuBarLeadingCircleImage =
+      'assets/images/icon_head.webp';
+  static const String appMenuBarLeadingName = 'wolf';
+
   static String galleryDesc(BuildContext context) =>
       """
 [

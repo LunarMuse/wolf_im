@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:wolf_im/config/toly_icon.dart';
-import 'package:wolf_im/pages/mobile/no_div_expansion_tile.dart';
+import 'package:wolf_im/widgets/mobile/no_div_expansion_tile.dart';
 
-import 'unit_drawer_header.dart';
+import '../../widgets/mobile/home_drawer_header_widget.dart';
 
 /// create by 张风捷特烈 on 2020-03-26
 /// contact me by email 1981462002@qq.com
@@ -25,7 +25,7 @@ class HomeDrawer extends StatelessWidget {
       child: ListView(
         padding: EdgeInsets.zero,
         children: <Widget>[
-          UnitDrawerHeader(color: color),
+          HomeDrawerHeaderWidget(color: color),
           _buildItem(context, TolyIcon.icon_them, '应用设置', '/settings'),
           _buildItem(context, TolyIcon.icon_layout, '数据管理', '/data_manage'),
           const Divider(height: 1),

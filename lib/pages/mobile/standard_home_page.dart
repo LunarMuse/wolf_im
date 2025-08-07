@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:wolf_im/l10n/ext.dart';
 import 'package:wolf_im/pages/mobile/home_drawer.dart';
-import 'package:wolf_im/pages/mobile/sliver_pinned_header.dart';
-import 'package:wolf_im/pages/mobile/standard_home_search.dart';
+import 'package:wolf_im/widgets/mobile/sliver_pinned_header.dart';
+import 'package:wolf_im/widgets/mobile/standard_home_search.dart';
 import 'package:wolf_im/widgets/round_rect_rab_indicator.dart';
 
 class StandardHomePage extends StatefulWidget {

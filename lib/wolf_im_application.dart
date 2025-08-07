@@ -5,7 +5,7 @@ import 'package:provider/provider.dart';
 import 'package:wolf_im/bloc/app_bloc_provider.dart';
 import 'package:wolf_im/bloc/app_config_bloc.dart';
 import 'package:wolf_im/bloc/app_start_repository.dart';
-import 'package:wolf_im/config/app_config.dart';
+import 'package:wolf_im/config/app/app_config.dart';
 import 'package:wolf_im/routes/app_route.dart';
 import 'package:wolf_im/wolf_im.dart';
 

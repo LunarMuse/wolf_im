@@ -1,51 +1,65 @@
-// Copyright 2014 The 张风捷特烈 . All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
-
-// Author:      张风捷特烈
-// CreateTime:  2024-05-13
-// Contact Me:  1981462002@qq.com
-
 import 'package:flutter/material.dart';
 import 'package:tolyui/tolyui.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:wolf_im/config/app/app_const_field.dart';
 import 'package:wolf_im/config/toly_icon.dart';
-import 'package:wolf_im/widgets/desktop/circle_image.dart';
+import 'package:wolf_im/widgets/desktop/circle_image_widget.dart';
 
+// MenuBarLeading 是侧边导航栏的 “顶部标识区”，核心功能是：
+//
+//    展示用户信息（头像 + 名称），增强应用的个人化属性；
+//    提供外部平台快捷入口（GitHub、掘金等），方便用户访问相关资源；
+//    通过布局和样式设计（深色背景 + 白色元素、统一缩进和间距），与侧边栏整体风格保持一致，提升 UI 协调性。
 class MenuBarLeading extends StatelessWidget {
   const MenuBarLeading({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 20, bottom: 8),
+      padding: const EdgeInsets.only(
+        top: 20,
+        bottom: 8,
+      ), // 顶部20px、底部8px内边距（与顶部边缘和下方内容分隔）
       child: Column(
+        // 垂直排列子组件（用户信息→链接图标→分割线→间距）
         children: [
+          // 1. 用户信息区（头像+名称）
           Wrap(
-            direction: Axis.vertical,
-            spacing: 8,
+            direction: Axis.vertical, // 垂直排列子组件
+            spacing: 8, // 头像与名称的垂直间距8px
             crossAxisAlignment: WrapCrossAlignment.center,
             children: [
+              // 可双击的头像
               GestureDetector(
                 onDoubleTap: () {
                   // sendEvent(1);
                 },
-                child: const CircleImage(
-                  image: AssetImage('assets/images/icon_head.webp'),
-                  size: 60,
+                // 圆形头像组件
+                child: const CircleImageWidget(
+                  image: AssetImage(AppConstField.appMenuBarLeadingCircleImage),
+                  size: AppConstField.appMenuBarLeadingCircleImageSize,
                 ),
               ),
-              const Text('张风捷特烈', style: TextStyle(color: Colors.white70)),
+              const Text(
+                AppConstField.appMenuBarLeadingName,
+                style: TextStyle(
+                  color: Colors.white70,
+                ), // 文本样式：白色70%透明度（适配深色背景）
+              ),
             ],
           ),
+          // 2. 外部平台链接图标区
           _buildIcons(),
+          // 3. 分割线（分隔顶部个人区与下方导航菜单）;分割线右侧缩进20px（避免贴边，与左侧头像对齐）
           const Divider(color: Colors.white, height: 1, endIndent: 20),
+          // 4. 底部间距（与下方导航菜单保持距离）
           const SizedBox(height: 16),
         ],
       ),
     );
   }
 
+  // TODO:
   final List<LinkIconMenu> menus = const [
     LinkIconMenu(
       TolyIcon.icon_github,
@@ -77,6 +91,7 @@ class MenuBarLeading extends StatelessWidget {
   }
 }
 
+// 外部链接数据模型与跳转工具类
 class LinkIconMenu {
   final IconData icon;
   final String url;

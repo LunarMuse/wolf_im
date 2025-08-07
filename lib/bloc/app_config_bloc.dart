@@ -2,10 +2,10 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wolf_im/config/app_config.dart';
-import 'package:wolf_im/config/app_config_cao.dart';
+import 'package:wolf_im/config/app/app_config.dart';
+import 'package:wolf_im/config/app/app_config_cao.dart';
+import 'package:wolf_im/config/app/sp_storage.dart';
 import 'package:wolf_im/config/cons.dart';
-import 'package:wolf_im/config/sp_storage.dart';
 import 'package:wolf_im/l10n/l10n.dart';
 
 class AppConfigBloc extends Cubit<AppConfig> {

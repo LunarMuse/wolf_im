@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'standard_search_bar.dart';
+import '../../widgets/mobile/standard_search_bar.dart';
 
 // SearchPage 可以复用 WidgetsBloc，进行局部的 Bloc
 // 不必单独提供 SearchBloc 增加复杂性

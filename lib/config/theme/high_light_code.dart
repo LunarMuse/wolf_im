@@ -7,12 +7,11 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-
 import 'package:string_scanner/string_scanner.dart';
 
+import '../language/dart_languge.dart';
+import '../language/language.dart';
 import 'highlighter_style.dart';
-import 'language/dart_languge.dart';
-import 'language/language.dart';
 
 /// final SyntaxHighlighterStyle style = SyntaxHighlighterStyle.lightThemeStyle();
 /// DartSyntaxHighlighter(style).format(source)
@@ -21,7 +20,6 @@ abstract class Highlighter {
   // ignore: one_member_abstracts
   ProgramLanguage language;
 
-
   Highlighter({required this.language});
 
   TextSpan format(String src);
@@ -29,18 +27,20 @@ abstract class Highlighter {
 
 //暗黑模式下的高亮样式
 class CodeHighlighter extends Highlighter {
-  CodeHighlighter(
-      {ProgramLanguage language = const DartLanguage(), HighlighterStyle? style}):super(language: language) {
+  CodeHighlighter({
+    ProgramLanguage language = const DartLanguage(),
+    HighlighterStyle? style,
+  }) : super(language: language) {
     _spans = <_HighlightSpan>[];
     _style = style ?? HighlighterStyle.fromColors(HighlighterStyle.lightColor);
   }
 
- late HighlighterStyle _style;
+  late HighlighterStyle _style;
 
-  String _src='';
+  String _src = '';
   late StringScanner _scanner;
 
-  List<_HighlightSpan> _spans=[];
+  List<_HighlightSpan> _spans = [];
 
   @override
   TextSpan format(String src) {
@@ -54,19 +54,22 @@ class CodeHighlighter extends Highlighter {
 
       for (_HighlightSpan span in _spans) {
         if (currentPosition != span.start) {
-          formattedText
-              .add(TextSpan(text: _src.substring(currentPosition, span.start)));
+          formattedText.add(
+            TextSpan(text: _src.substring(currentPosition, span.start)),
+          );
         }
 
-        formattedText.add(TextSpan(
-            style: span.textStyle(_style), text: span.textForSpan(_src)));
+        formattedText.add(
+          TextSpan(style: span.textStyle(_style), text: span.textForSpan(_src)),
+        );
 
         currentPosition = span.end;
       }
 
       if (currentPosition != _src.length) {
-        formattedText
-            .add(TextSpan(text: _src.substring(currentPosition, _src.length)));
+        formattedText.add(
+          TextSpan(text: _src.substring(currentPosition, _src.length)),
+        );
       }
 
       return TextSpan(style: _style.baseStyle, children: formattedText);
@@ -85,25 +88,32 @@ class CodeHighlighter extends Highlighter {
 
       // Block comments
       if (_scanner.scan(RegExp(r'/\*(.|\n)*\*/'))) {
-        _spans.add(_HighlightSpan(_HighlightType.comment,
-            _scanner.lastMatch?.start??0, _scanner.lastMatch?.end??0));
+        _spans.add(
+          _HighlightSpan(
+            _HighlightType.comment,
+            _scanner.lastMatch?.start ?? 0,
+            _scanner.lastMatch?.end ?? 0,
+          ),
+        );
         continue;
       }
 
       // Line comments
       if (_scanner.scan(RegExp(r'//'))) {
-        final int startComment = _scanner.lastMatch?.start??0;
+        final int startComment = _scanner.lastMatch?.start ?? 0;
         bool eof = false;
         int endComment;
         if (_scanner.scan(RegExp(r'(.*\r\n)|(.*\n)'))) {
           int? end = _scanner.lastMatch?.end;
-          endComment = end==null?0:end - 1;
+          endComment = end == null ? 0 : end - 1;
         } else {
           eof = true;
           endComment = _src.length;
         }
 
-        _spans.add(_HighlightSpan(_HighlightType.comment, startComment, endComment));
+        _spans.add(
+          _HighlightSpan(_HighlightType.comment, startComment, endComment),
+        );
 
         if (eof) break;
         continue;
@@ -111,78 +121,128 @@ class CodeHighlighter extends Highlighter {
 
       // Raw r"String"
       if (_scanner.scan(RegExp(r'r".*"'))) {
-        _spans.add(_HighlightSpan(_HighlightType.string,
-            _scanner.lastMatch?.start??0, _scanner.lastMatch?.end??0));
+        _spans.add(
+          _HighlightSpan(
+            _HighlightType.string,
+            _scanner.lastMatch?.start ?? 0,
+            _scanner.lastMatch?.end ?? 0,
+          ),
+        );
         continue;
       }
 
       // Raw r'String'
       if (_scanner.scan(RegExp(r"r'.*'"))) {
-        _spans.add(_HighlightSpan(_HighlightType.string,
-            _scanner.lastMatch?.start??0, _scanner.lastMatch?.end??0));
+        _spans.add(
+          _HighlightSpan(
+            _HighlightType.string,
+            _scanner.lastMatch?.start ?? 0,
+            _scanner.lastMatch?.end ?? 0,
+          ),
+        );
         continue;
       }
 
       // Multiline """String"""
       if (_scanner.scan(RegExp(r'"""(?:[^"\\]|\\(.|\n))*"""'))) {
-        _spans.add(_HighlightSpan(_HighlightType.string,
-            _scanner.lastMatch?.start??0, _scanner.lastMatch?.end??0));
+        _spans.add(
+          _HighlightSpan(
+            _HighlightType.string,
+            _scanner.lastMatch?.start ?? 0,
+            _scanner.lastMatch?.end ?? 0,
+          ),
+        );
         continue;
       }
 
       // Multiline '''String'''
       if (_scanner.scan(RegExp(r"'''(?:[^'\\]|\\(.|\n))*'''"))) {
-        _spans.add(_HighlightSpan(_HighlightType.string,
-            _scanner.lastMatch?.start??0, _scanner.lastMatch?.end??0));
+        _spans.add(
+          _HighlightSpan(
+            _HighlightType.string,
+            _scanner.lastMatch?.start ?? 0,
+            _scanner.lastMatch?.end ?? 0,
+          ),
+        );
         continue;
       }
 
       // "String"
       if (_scanner.scan(RegExp(r'"(?:[^"\\]|\\.)*"'))) {
-        _spans.add(_HighlightSpan(_HighlightType.string,
-            _scanner.lastMatch?.start??0, _scanner.lastMatch?.end??0));
+        _spans.add(
+          _HighlightSpan(
+            _HighlightType.string,
+            _scanner.lastMatch?.start ?? 0,
+            _scanner.lastMatch?.end ?? 0,
+          ),
+        );
         continue;
       }
 
       // 'String'
       if (_scanner.scan(RegExp(r"'(?:[^'\\]|\\.)*'"))) {
-        _spans.add(_HighlightSpan(_HighlightType.string,
-            _scanner.lastMatch?.start??0, _scanner.lastMatch?.end??0));
+        _spans.add(
+          _HighlightSpan(
+            _HighlightType.string,
+            _scanner.lastMatch?.start ?? 0,
+            _scanner.lastMatch?.end ?? 0,
+          ),
+        );
         continue;
       }
 
       // Double
       if (_scanner.scan(RegExp(r'\d+\.\d+'))) {
-        _spans.add(_HighlightSpan(_HighlightType.number,
-            _scanner.lastMatch?.start??0, _scanner.lastMatch?.end??0));
+        _spans.add(
+          _HighlightSpan(
+            _HighlightType.number,
+            _scanner.lastMatch?.start ?? 0,
+            _scanner.lastMatch?.end ?? 0,
+          ),
+        );
         continue;
       }
 
       // Integer
       if (_scanner.scan(RegExp(r'\d+'))) {
-        _spans.add(_HighlightSpan(_HighlightType.number,
-            _scanner.lastMatch?.start??0, _scanner.lastMatch?.end??0));
+        _spans.add(
+          _HighlightSpan(
+            _HighlightType.number,
+            _scanner.lastMatch?.start ?? 0,
+            _scanner.lastMatch?.end ?? 0,
+          ),
+        );
         continue;
       }
 
       // Punctuation
       if (_scanner.scan(RegExp(r'[\[\]{}().!=<>&\|\?\+\-\*/%\^~;:,]'))) {
-        _spans.add(_HighlightSpan(_HighlightType.punctuation,
-            _scanner.lastMatch?.start??0, _scanner.lastMatch?.end??0));
+        _spans.add(
+          _HighlightSpan(
+            _HighlightType.punctuation,
+            _scanner.lastMatch?.start ?? 0,
+            _scanner.lastMatch?.end ?? 0,
+          ),
+        );
         continue;
       }
 
       // Meta data
       if (_scanner.scan(RegExp(r'@\w+'))) {
-        _spans.add(_HighlightSpan(_HighlightType.keyword,
-            _scanner.lastMatch?.start??0, _scanner.lastMatch?.end??0));
+        _spans.add(
+          _HighlightSpan(
+            _HighlightType.keyword,
+            _scanner.lastMatch?.start ?? 0,
+            _scanner.lastMatch?.end ?? 0,
+          ),
+        );
         continue;
       }
 
       // Words
       if (_scanner.scan(RegExp(r'\w+'))) {
         _HighlightType? type;
-        String word = _scanner.lastMatch?[0]??'';
+        String word = _scanner.lastMatch?[0] ?? '';
 
         if (word.startsWith('_')) word = word.substring(1);
 
@@ -198,8 +258,13 @@ class CodeHighlighter extends Highlighter {
           type = _HighlightType.constant;
         }
         if (type != null) {
-          _spans.add(_HighlightSpan(
-              type, _scanner.lastMatch?.start??0, _scanner.lastMatch?.end??0));
+          _spans.add(
+            _HighlightSpan(
+              type,
+              _scanner.lastMatch?.start ?? 0,
+              _scanner.lastMatch?.end ?? 0,
+            ),
+          );
         }
       }
       // Check if this loop did anything
@@ -216,8 +281,13 @@ class CodeHighlighter extends Highlighter {
 
   void _simplify() {
     for (int i = _spans.length - 2; i >= 0; i -= 1) {
-      if (_spans[i].type == _spans[i + 1].type && _spans[i].end == _spans[i + 1].start) {
-        _spans[i] = _HighlightSpan(_spans[i].type, _spans[i].start, _spans[i + 1].end);
+      if (_spans[i].type == _spans[i + 1].type &&
+          _spans[i].end == _spans[i + 1].start) {
+        _spans[i] = _HighlightSpan(
+          _spans[i].type,
+          _spans[i].start,
+          _spans[i + 1].end,
+        );
         _spans.removeAt(i + 1);
       }
     }
@@ -239,7 +309,7 @@ enum _HighlightType {
   string,
   punctuation,
   klass,
-  constant
+  constant,
 }
 
 class _HighlightSpan {

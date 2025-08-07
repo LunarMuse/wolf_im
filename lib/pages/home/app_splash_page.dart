@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fx_boot_starter/fx_boot_starter.dart';
 import 'package:fx_platform_adapter/fx_platform_adapter.dart';
+import 'package:wolf_im/config/app/app_config.dart';
 import 'package:wolf_im/config/app/app_const_field.dart';
-import 'package:wolf_im/config/app_config.dart';
-import 'package:wolf_im/config/global_value.dart';
+import 'package:wolf_im/config/app/global_value.dart';
 import 'package:wolf_im/config/theme/app_text_style.dart';
 import 'package:wolf_im/widgets/flutter_unit_text_widget.dart';
 

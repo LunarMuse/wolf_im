@@ -6,9 +6,9 @@ import 'package:flutter/services.dart';
 import 'package:fx_boot_starter/fx_boot_starter.dart';
 import 'package:fx_platform_adapter/fx_platform_adapter.dart';
 import 'package:path/path.dart' as path;
-import 'package:wolf_im/config/app_config.dart';
-import 'package:wolf_im/config/app_config_po.dart';
-import 'package:wolf_im/config/sp_storage.dart';
+import 'package:wolf_im/config/app/app_config.dart';
+import 'package:wolf_im/config/app/app_config_po.dart';
+import 'package:wolf_im/config/app/sp_storage.dart';
 
 // 1. AppStartRepo 类是一个应用启动初始化仓库（Repository），主要负责在应用启动阶段执行必要的初始化任务，并提供初始的应用配置信息。
 //  它遵循了 “仓储模式（Repository Pattern）”，将应用启动的初始化逻辑封装起来，便于管理和复用。
