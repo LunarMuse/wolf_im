@@ -8,11 +8,16 @@ class AppStartErrorPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final List<Widget> barActions = <Widget>[];
+    if (kAppEnv.isDesktop) {
+      barActions.add(WindowButtons());
+    }
+
     return Scaffold(
       appBar: PreferredDragToMoveWrapper(
         child: AppBar(
           title: const Text("App 启动异常", style: TextStyle(fontFamily: '宋体')),
-          actions: const [WindowButtons()],
+          actions: barActions,
         ),
       ),
       body: Center(
@@ -33,11 +38,10 @@ class AppStartErrorPage extends StatelessWidget {
               ),
             ),
             TolyLink(
-              href: 'https://github.com/toly1994328/',
-              text: 'Github 开源地址: FlutterUnit',
+              href: 'https://github.com/LunarMuse/wolf_im',
+              text: 'Github 开源地址: wolf im',
               onTap: (l) {},
             ),
-            const Text("联系邮箱: 1981462002@qq.com"),
             const SizedBox(height: 12),
           ],
         ),

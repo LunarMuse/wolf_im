@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:wolf_im/widgets/circle.dart';
-import 'package:wolf_im/widgets/mobile/edit_category_panel_widget.dart';
 import 'package:wolf_im/widgets/mobile/home_drawer_header_widget.dart';
 
 // HomeRightDrawerWidget 是一个右侧抽屉组件，通常通过移动端导航栏（如 Scaffold 的 endDrawer）触发显示，
@@ -28,7 +27,7 @@ class _HomeRightDrawerWidgetState extends State<HomeRightDrawerWidget> {
     // 获取当前主题的背景色（用于抽屉整体背景，实现与应用主题的统一）
     final Color color = Theme.of(context).scaffoldBackgroundColor;
 
-    // 内容结构：从上到下依次为 “头部（HomeDrawerHeaderWidget）”→“标题（_buildTitle）”→“编辑面板（EditCategoryPanelWidget）”，形成清晰的功能分区。
+    // 内容结构：从上到下依次为 “头部（HomeDrawerPageHeaderWidget）”→“标题（_buildTitle）”→“编辑面板（EditCategoryPanelWidget）”，形成清晰的功能分区。
     return Container(
       // 抽屉背景色：使用主题背景色，保持风格一致
       color: color,
@@ -39,10 +38,10 @@ class _HomeRightDrawerWidgetState extends State<HomeRightDrawerWidget> {
         children: <Widget>[
           // 抽屉头部组件（如用户信息、标题）
           HomeDrawerHeaderWidget(color: color),
-          // 装饰性标题栏（“添加收藏集”）
-          _buildTitle(context),
-          // 收藏集编辑面板（核心功能区）
-          const EditCategoryPanelWidget(),
+          // // 装饰性标题栏（“添加收藏集”）
+          // _buildTitle(context),
+          // // 收藏集编辑面板（核心功能区）
+          // const EditCategoryPanelWidget(),
         ],
       ),
     );

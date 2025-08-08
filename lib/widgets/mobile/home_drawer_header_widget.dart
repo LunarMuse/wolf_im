@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wolf_im/config/app/app_const_field.dart';
 
 class HomeDrawerHeaderWidget extends StatelessWidget {
   final Color color;
@@ -24,7 +25,7 @@ class HomeDrawerHeaderWidget extends StatelessWidget {
             children: <Widget>[
               FlutterLogo(size: 35),
               Text(
-                'Flutter Unit',
+                AppConstField.appName,
                 style: TextStyle(
                   fontSize: 24,
                   color: Colors.white,
@@ -41,7 +42,7 @@ class HomeDrawerHeaderWidget extends StatelessWidget {
           ),
           const SizedBox(height: 15),
           Text(
-            'The Unity Of Flutter, The Unity Of Coder.',
+            '个人信息',
             style: TextStyle(
               fontSize: 15,
               color: Colors.white,
@@ -56,7 +57,7 @@ class HomeDrawerHeaderWidget extends StatelessWidget {
           ),
           const SizedBox(height: 5),
           Text(
-            'Flutter的联合，编程者的联合。',
+            '简介',
             style: TextStyle(
               fontSize: 15,
               color: Colors.white,
@@ -74,7 +75,7 @@ class HomeDrawerHeaderWidget extends StatelessWidget {
             children: <Widget>[
               Spacer(flex: 5),
               Text(
-                '—— 张风捷特烈',
+                '—— OpenIM',
                 style: TextStyle(
                   fontSize: 15,
                   color: Colors.white,

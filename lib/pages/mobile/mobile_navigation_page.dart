@@ -3,7 +3,6 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:wolf_im/pages/mobile/standard_home_page.dart';
 import 'package:wolf_im/routes/app_tab.dart';
-import 'package:wolf_im/widgets/mobile/home_right_drawer_widget.dart';
 import 'package:wolf_im/widgets/mobile/pure_bottom_bar.dart';
 import 'package:wolf_im/widgets/mobile/update_red_point.dart';
 
@@ -55,14 +54,14 @@ class _MobileNavigationState extends State<MobileNavigationPage> {
       // 关键：让页面内容延伸到底部导航栏下方（适合底部导航栏透明/半透明时，避免内容被遮挡）
       extendBody: true,
       // 右侧抽屉菜单（如个人中心、设置入口）
-      endDrawer: const HomeRightDrawerWidget(),
+      // endDrawer: const HomeRightDrawerWidget(),
       // PageView作为页面容器，其 children 是各个标签对应的页面（目前仅显示 StandardHomePage，其他为预留）。
       //  由于设置了 _neverScroll，用户无法通过左右滑动切换这些页面,通过 _controller 控制显示哪个。
       body: PageView(
         physics: _neverScroll, // 禁用滑动切换
         controller: _controller, // 绑定页面控制器
         children: [
-          StandardHomePage(heard: Text("heard")),
+          StandardHomePage(heard: Text("置顶")),
           // GalleryUnit(),
           // AlgoScope(child: ArtifactPage()),
           // ArtSysScope(child: MobileArticlePage()),

@@ -1,16 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:wolf_im/config/toly_icon.dart';
+import 'package:wolf_im/widgets/mobile/home_drawer_header_widget.dart';
 import 'package:wolf_im/widgets/mobile/no_div_expansion_tile.dart';
 
-import '../../widgets/mobile/home_drawer_header_widget.dart';
-
-/// create by 张风捷特烈 on 2020-03-26
-/// contact me by email 1981462002@qq.com
-/// 说明:
-
-class HomeDrawer extends StatelessWidget {
-  const HomeDrawer({super.key});
+class HomeDrawerPage extends StatelessWidget {
+  const HomeDrawerPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,14 +20,12 @@ class HomeDrawer extends StatelessWidget {
       child: ListView(
         padding: EdgeInsets.zero,
         children: <Widget>[
+          // 头像、简介
           HomeDrawerHeaderWidget(color: color),
           _buildItem(context, TolyIcon.icon_them, '应用设置', '/settings'),
-          _buildItem(context, TolyIcon.icon_layout, '数据管理', '/data_manage'),
           const Divider(height: 1),
           _buildFlutterUnit(context),
-          _buildItem(context, TolyIcon.icon_code, 'Dart 手册', ''),
           const Divider(height: 1),
-          _buildItem(context, Icons.info, '关于应用', '/about_app'),
           _buildItem(context, TolyIcon.icon_kafei, '联系本王', '/about_me'),
         ],
       ),
@@ -42,7 +35,7 @@ class HomeDrawer extends StatelessWidget {
   Widget _buildFlutterUnit(BuildContext context) => NoBorderExpansionTile(
     backgroundColor: Colors.white70,
     leading: Icon(Icons.extension, color: Theme.of(context).primaryColor),
-    title: const Text('Flutter 集录'),
+    title: const Text('Flutter ITEM'),
     children: <Widget>[
       _buildItem(context, TolyIcon.icon_tag, '属性集录', ''),
       _buildItem(context, Icons.palette, '绘画集录', ''),
