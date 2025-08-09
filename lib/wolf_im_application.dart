@@ -8,6 +8,7 @@ import 'package:wolf_im/bloc/app_start_repository.dart';
 import 'package:wolf_im/config/app/app_config.dart';
 import 'package:wolf_im/routes/app_route.dart';
 import 'package:wolf_im/wolf_im.dart';
+import 'package:wolf_im/routes/router.dart';
 
 // WolfIMApplication具体应用的启动逻辑实现类，通过混入 FxStarter 复用通用骨架，同时填充业务细节。
 // 明确泛型为 AppConfig（启动过程中处理的配置数据类型）；

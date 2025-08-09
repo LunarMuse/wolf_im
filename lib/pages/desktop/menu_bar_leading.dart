@@ -3,7 +3,7 @@ import 'package:tolyui/tolyui.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:wolf_im/config/app/app_const_field.dart';
 import 'package:wolf_im/config/toly_icon.dart';
-import 'package:wolf_im/widgets/desktop/circle_image_widget.dart';
+import 'package:wolf_im/widgets/circle_image_widget.dart';
 
 // MenuBarLeading 是侧边导航栏的 “顶部标识区”，核心功能是：
 //

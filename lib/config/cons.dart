@@ -17,12 +17,8 @@ class Cons {
   static const List<String> kFontFamilySupport = [
     'local',
     'ComicNeue',
-    'IndieFlower',
     'BalooBhai2',
-    'Inconsolata',
-    'Neucha',
-    'fangzhengkaiti',
-    'xiahangkai',
+    'RegularScript',
     'WorkSans',
     'Roboto',
   ];

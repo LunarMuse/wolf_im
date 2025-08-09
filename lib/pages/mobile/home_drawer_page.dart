@@ -22,6 +22,7 @@ class HomeDrawerPage extends StatelessWidget {
         children: <Widget>[
           // 头像、简介
           HomeDrawerHeaderWidget(color: color),
+          // TODO:
           _buildItem(context, TolyIcon.icon_them, '应用设置', '/settings'),
           const Divider(height: 1),
           _buildFlutterUnit(context),

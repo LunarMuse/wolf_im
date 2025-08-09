@@ -1,7 +1,7 @@
 import 'package:go_router/go_router.dart';
 import 'package:wolf_im/pages/home/app_splash_page.dart';
 import 'package:wolf_im/pages/home/app_start_error_page.dart';
-import 'package:wolf_im/routes/app_route.dart';
+import 'package:wolf_im/routes/router.dart';
 
 List<GoRoute> get globalRoutes => [
   GoRoute(

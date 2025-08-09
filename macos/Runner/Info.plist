@@ -28,5 +28,21 @@
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>NSAppTransportSecurity</key>
+    <dict>
+      <key>NSAllowsArbitraryLoads</key>
+      <true/> <!-- 仅测试用，生产环境需指定域名 -->
+    </dict>
+    <!-- 声明支持的 Scheme -->
+    <key>CFBundleURLTypes</key>
+    <array>
+      <dict>
+        <key>CFBundleURLSchemes</key>
+        <array>
+          <string>http</string>
+          <string>https</string>
+        </array>
+      </dict>
+    </array>
 </dict>
 </plist>

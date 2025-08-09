@@ -10,6 +10,7 @@ import 'package:wolf_im/config/app/app_const_field.dart';
 import 'package:wolf_im/config/theme/app_theme.dart';
 import 'package:wolf_im/l10n/l10n.dart';
 import 'package:wolf_im/routes/app_route.dart';
+import 'package:wolf_im/routes/router.dart';
 
 class WolfIM extends StatefulWidget {
   const WolfIM({super.key});
